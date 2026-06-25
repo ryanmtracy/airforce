@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Reviews | Air Force Duct Cleaning & Testing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="css/style.css"/>
+<style>
+.page-hero { background: var(--navy); padding: 140px 0 80px; }
+.page-hero-eyebrow { font-family:'IBM Plex Sans',sans-serif; font-size:11px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--red); display:flex; align-items:center; gap:10px; margin-bottom:16px; }
+.page-hero-eyebrow::before { content:''; display:block; width:24px; height:2px; background:var(--red); }
+.page-hero h1 { color:#fff; margin-bottom:16px; }
+.page-hero p { color:rgba(255,255,255,0.65); font-size:18px; max-width:560px; line-height:1.65; }
+
+.rating-hero { background: var(--offwhite); padding: 56px 0; border-bottom: 1px solid var(--border); }
+.rating-inner { max-width:1280px; margin:0 auto; padding:0 24px; display:flex; gap:64px; align-items:center; flex-wrap:wrap; }
+.rating-big { display:flex; align-items:flex-end; gap:20px; }
+.rating-num { font-family:'Montserrat',sans-serif; font-size:80px; font-weight:800; color:var(--navy); line-height:1; }
+.rating-detail { padding-bottom: 12px; }
+.star-row { display:flex; gap:3px; margin-bottom:8px; }
+.star-row .material-symbols-outlined { font-size:22px; color:var(--gold); font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24; }
+.rating-count { font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; letter-spacing:0.06em; color:var(--gray); text-transform:uppercase; }
+.rating-bars { flex:1; min-width:240px; display:flex; flex-direction:column; gap:10px; }
+.rbar { display:flex; align-items:center; gap:12px; }
+.rbar-label { font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:var(--gray); width:32px; flex-shrink:0; }
+.rbar-track { flex:1; height:8px; background:var(--border); overflow:hidden; }
+.rbar-fill { height:100%; background:var(--gold); }
+.rbar-count { font-family:'IBM Plex Sans',sans-serif; font-size:12px; color:var(--gray); width:24px; text-align:right; flex-shrink:0; }
+
+.reviews-section { padding: 80px 0; }
+.reviews-filter { display:flex; gap:12px; flex-wrap:wrap; margin-bottom:48px; }
+.filter-btn {
+  font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; letter-spacing:0.06em; text-transform:uppercase;
+  padding:10px 20px; border:1px solid var(--border); background:#fff; color:var(--gray);
+  cursor:pointer; transition:all 0.2s;
+}
+.filter-btn:hover, .filter-btn.active { background:var(--navy); color:#fff; border-color:var(--navy); }
+
+.reviews-masonry { columns: 3; column-gap: 24px; }
+.review-card {
+  break-inside: avoid; background:#fff; border:1px solid var(--border);
+  padding:28px; margin-bottom:24px; display:flex; flex-direction:column; gap:16px;
+}
+.review-top { display:flex; justify-content:space-between; align-items:flex-start; }
+.star-row-sm { display:flex; gap:2px; }
+.star-row-sm .material-symbols-outlined { font-size:16px; color:var(--gold); font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24; }
+.review-tag {
+  font-family:'IBM Plex Sans',sans-serif; font-size:10px; font-weight:600; letter-spacing:0.07em; text-transform:uppercase;
+  background:var(--offwhite); color:var(--gray); padding:4px 10px;
+}
+.review-card blockquote { font-size:15px; line-height:1.7; color:var(--dgray); font-style:italic; }
+.review-bottom { display:flex; justify-content:space-between; align-items:center; }
+.review-name { font-family:'IBM Plex Sans',sans-serif; font-size:13px; font-weight:600; color:var(--navy); }
+.review-verified { display:flex; align-items:center; gap:4px; font-family:'IBM Plex Sans',sans-serif; font-size:10px; font-weight:600; color:var(--gold); letter-spacing:0.05em; }
+.review-verified .material-symbols-outlined { font-size:14px; font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24; }
+
+@media (max-width:900px) { .reviews-masonry { columns:2; } }
+@media (max-width:560px) { .reviews-masonry { columns:1; } }
+
+.cta-band { background: var(--red); padding: 72px 0; text-align:center; }
+.cta-band h2 { font-family:'Montserrat',sans-serif; font-size:clamp(24px,4vw,40px); font-weight:800; color:#fff; margin-bottom:12px; }
+.cta-band p { color:rgba(255,255,255,0.8); font-size:18px; margin-bottom:36px; }
+.cta-phone { display:inline-flex; align-items:center; gap:10px; background:#fff; color:var(--red); font-family:'Montserrat',sans-serif; font-size:20px; font-weight:800; padding:18px 36px; text-decoration:none; box-shadow:0 6px 24px rgba(0,0,0,0.15); transition:transform 0.15s, box-shadow 0.15s; }
+.cta-phone:hover { transform:translateY(-2px); box-shadow:0 10px 32px rgba(0,0,0,0.25); }
+</style>
+</head>
+<body>
+
+<div class="util-bar">
+  <div class="util-bar-inner">
+    <div class="util-bar-left"><strong>Conway, AR</strong> &nbsp;|&nbsp; Veteran Owned &amp; Operated &nbsp;|&nbsp; Licensed &amp; Insured</div>
+    <div class="util-bar-right">
+      <a href="signin.html">My Account</a>
+      <a href="tel:5014286690" class="util-bar-phone"><span class="material-symbols-outlined" style="font-size:14px;vertical-align:middle;">call</span> 501-428-6690</a>
+    </div>
+  </div>
+</div>
+<header id="topnav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">
+      <div class="nav-logo-text">AIR FORCE<span>DUCT CLEANING &amp; TESTING</span></div>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="faq.html">FAQ</a>
+      <a href="reviews.html" class="active">Reviews</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn-nav-call" href="tel:5014286690"><span class="material-symbols-outlined">call</span> 501-428-6690</a>
+      <a class="btn-nav-signin" href="signin.html">Sign In</a>
+      <button class="nav-hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<nav class="mobile-menu" id="mobile-menu" style="display:none;">
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="faq.html">FAQ</a>
+  <a href="reviews.html" class="active">Reviews</a>
+  <a href="contact.html">Contact</a>
+  <a href="signin.html">Sign In</a>
+  <a href="tel:5014286690" class="btn-mobile-call">📞 Call 501-428-6690 — Free Estimates</a>
+</nav>
+
+    <div class="nav-right">
+      <a class="nav-phone" href="tel:5014286690"><span class="material-symbols-outlined">call</span> 501-428-6690</a>
+      <a class="btn-nav" href="signin.html">Sign In</a>
+      <button class="nav-hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<nav class="mobile-menu" id="mobile-menu" style="display:none;">
+  <a href="services.html">Services</a>
+  <a href="index.html#about">About Us</a>
+  <a href="faq.html">FAQ</a>
+  <a href="reviews.html" class="active">Reviews</a>
+  <a href="contact.html">Contact</a>
+  <a href="signin.html">Sign In</a>
+  <a href="tel:5014286690" class="btn-mobile">📞 Call 501-428-6690</a>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-eyebrow">Client Reviews</div>
+    <h1 class="headline-xl">Don't Take Our Word For It</h1>
+    <p>Real reviews from real homeowners across Central Arkansas. We take pride in our work and back it with a satisfaction guarantee.</p>
+  </div>
+</section>
+
+<div class="rating-hero">
+  <div class="rating-inner">
+    <div class="rating-big">
+      <div class="rating-num">4.9</div>
+      <div class="rating-detail">
+        <div class="star-row">
+          <span class="material-symbols-outlined">star</span>
+          <span class="material-symbols-outlined">star</span>
+          <span class="material-symbols-outlined">star</span>
+          <span class="material-symbols-outlined">star</span>
+          <span class="material-symbols-outlined">star</span>
+        </div>
+        <div class="rating-count">Based on 500+ Reviews</div>
+      </div>
+    </div>
+    <div class="rating-bars">
+      <div class="rbar"><span class="rbar-label">5★</span><div class="rbar-track"><div class="rbar-fill" style="width:92%"></div></div><span class="rbar-count">92%</span></div>
+      <div class="rbar"><span class="rbar-label">4★</span><div class="rbar-track"><div class="rbar-fill" style="width:6%"></div></div><span class="rbar-count">6%</span></div>
+      <div class="rbar"><span class="rbar-label">3★</span><div class="rbar-track"><div class="rbar-fill" style="width:2%"></div></div><span class="rbar-count">2%</span></div>
+      <div class="rbar"><span class="rbar-label">2★</span><div class="rbar-track"><div class="rbar-fill" style="width:0%"></div></div><span class="rbar-count">0%</span></div>
+      <div class="rbar"><span class="rbar-label">1★</span><div class="rbar-track"><div class="rbar-fill" style="width:0%"></div></div><span class="rbar-count">0%</span></div>
+    </div>
+  </div>
+</div>
+
+<section class="reviews-section">
+  <div class="container">
+    <div class="reviews-filter">
+      <button class="filter-btn active" data-filter="all">All Reviews</button>
+      <button class="filter-btn" data-filter="duct">Duct Cleaning</button>
+      <button class="filter-btn" data-filter="dryer">Dryer Vent</button>
+      <button class="filter-btn" data-filter="mold">Mold Remediation</button>
+      <button class="filter-btn" data-filter="emergency">Emergency</button>
+    </div>
+    <div class="reviews-masonry" id="reviews-grid">
+
+      <div class="review-card reveal" data-tag="duct">
+        <div class="review-top">
+          <div class="star-row-sm"><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span></div>
+          <span class="review-tag">Duct Cleaning</span>
+        </div>
+        <blockquote>"Punctual, professional, spotless. Harrison and the team did an incredible job cleaning our entire system. The air feels cleaner immediately. Highly recommend to anyone looking for military-grade thoroughness."</blockquote>
+        <div class="review-bottom">
+          <div class="review-name">Katy Lumpkin</div>
+          <div class="review-verified"><span class="material-symbols-outlined">verified</span> Verified</div>
+        </div>
+      </div>
+
+      <div class="review-card reveal" data-tag="mold">
+        <div class="review-top">
+          <div class="star-row-sm"><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span></div>
+          <span class="review-tag">Mold Remediation</span>
+        </div>
+        <blockquote>"Mold remediation done right. The difference is literally night and day. The team was incredibly thorough and explained every step of the process."</blockquote>
+        <div class="review-bottom">
+          <div class="review-name">Lori Foreman</div>
+          <div class="review-verified"><span class="material-symbols-outlined">verified</span> Verified</div>
+        </div>
+      </div>
+
+      <div class="review-card reveal" data-tag="duct">
+        <div class="review-top">
+          <div class="star-row-sm"><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span></div>
+          <span class="review-tag">Duct Cleaning</span>
+        </div>
+        <blockquote>"Prompt assessment, competitive pricing, seamless service. They respected my home and got the job done faster than expected."</blockquote>
+        <div class="review-bottom">
+          <div class="review-name">Lane Nelson</div>
+          <div class="review-verified"><span class="material-symbols-outlined">verified</span> Verified</div>
+        </div>
+      </div>
+
+      <div class="review-card reveal" data-tag="duct">
+        <div class="review-top">
+          <div class="star-row-sm"><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span></div>
+          <span class="review-tag">Duct Cleaning</span>
+        </div>
+        <blockquote>"Before and after photos were provided. Very professional and personable team. Highly recommended — you can literally see the difference."</blockquote>
+        <div class="review-bottom">
+          <div class="review-name">Suzy Smith</div>
+          <div class="review-verified"><span class="material-symbols-outlined">verified</span> Verified</div>
+        </div>
+      </div>
+
+      <div class="review-card reveal" data-tag="duct">
+        <div class="review-top">
+          <div class="star-row-sm"><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span></div>
+          <span class="review-tag">Duct Cleaning</span>
+        </div>
+        <blockquote>"Top notch experience, amazing communication from start to finish. I knew exactly what was happening at every step. Will absolutely use again."</blockquote>
+        <div class="review-bottom">
+          <div class="review-name">Rachael Pamp</div>
+          <div class="review-verified"><span class="material-symbols-outlined">verified</span> Verified</div>
+        </div>
+      </div>
+
+      <div class="review-card reveal" data-tag="duct">
+        <div class="review-top">
+          <div class="star-row-sm"><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span></div>
+          <span class="review-tag">Maintenance</span>
+        </div>
+        <blockquote>"Quick resolution, reasonable pricing, and they set up a recurring maintenance schedule to keep things perfect going forward. Exactly what I needed."</blockquote>
+        <div class="review-bottom">
+          <div class="review-name">Ellen Dykes</div>
+          <div class="review-verified"><span class="material-symbols-outlined">verified</span> Verified</div>
+        </div>
+      </div>
+
+      <div class="review-card reveal" data-tag="dryer">
+        <div class="review-top">
+          <div class="star-row-sm"><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span></div>
+          <span class="review-tag">Dryer Vent</span>
+        </div>
+        <blockquote>"Cleared a serious dryer vent blockage completely. Very professional approach and guaranteed their work. My dryer runs twice as fast now."</blockquote>
+        <div class="review-bottom">
+          <div class="review-name">Debi Ethridge</div>
+          <div class="review-verified"><span class="material-symbols-outlined">verified</span> Verified</div>
+        </div>
+      </div>
+
+      <div class="review-card reveal" data-tag="emergency">
+        <div class="review-top">
+          <div class="star-row-sm"><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span></div>
+          <span class="review-tag">Emergency</span>
+        </div>
+        <blockquote>"Same-day consultation! They identified and solved a funky smell we'd had for weeks in under two hours. Incredible service speed and total professionalism."</blockquote>
+        <div class="review-bottom">
+          <div class="review-name">Haley Carpenter</div>
+          <div class="review-verified"><span class="material-symbols-outlined">verified</span> Verified</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <div class="container">
+    <h2>Join 500+ Satisfied Homeowners</h2>
+    <p>Schedule your service today — same-day appointments available.</p>
+    <a class="cta-phone" href="tel:5014286690">
+      <span class="material-symbols-outlined" style="font-size:26px;">call</span> 501-428-6690
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo-text">AIR FORCE<span> DUCT CLEANING &amp; TESTING</span></div>
+      <p>Military-grade air duct cleaning, dryer vent service, and HVAC testing in Conway and Central Arkansas. Veteran owned and operated.</p>
+      <p style="margin-top:14px; color:rgba(255,255,255,0.35); font-size:13px;">© 2024 Air Force Duct Cleaning &amp; Testing. All Rights Reserved.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="faq.html">FAQ</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="tel:5014286690">📞 501-428-6690</a>
+      <a href="mailto:cleanduct@feeltheairforce.com">cleanduct@feeltheairforce.com</a>
+      <a href="#">Conway, AR 72034</a>
+      <a href="#">Mon–Sat 8AM–6PM</a>
+      <a href="#">24/7 Emergency Line</a>
+    </div>
+    <div class="footer-col">
+      <h4>Account</h4>
+      <a href="signin.html">Sign In</a>
+      <a href="register.html">Create Account</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2024 Air Force Duct Cleaning &amp; Testing — Conway, Arkansas</span>
+    <span>Veteran Owned &amp; Operated</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+// Filter buttons
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    document.querySelectorAll('.review-card').forEach(card => {
+      card.style.display = (filter === 'all' || card.dataset.tag === filter) ? '' : 'none';
+    });
+  });
+});
+</script>
+</body>
+</html>

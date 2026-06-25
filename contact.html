@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Contact | Air Force Duct Cleaning & Testing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="css/style.css"/>
+<style>
+.page-hero { background: var(--navy); padding: 140px 0 80px; }
+.page-hero-eyebrow { font-family:'IBM Plex Sans',sans-serif; font-size:11px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--red); display:flex; align-items:center; gap:10px; margin-bottom:16px; }
+.page-hero-eyebrow::before { content:''; display:block; width:24px; height:2px; background:var(--red); }
+.page-hero h1 { color:#fff; margin-bottom:16px; }
+.page-hero p { color:rgba(255,255,255,0.65); font-size:18px; max-width:560px; line-height:1.65; }
+
+.contact-section { padding: 96px 0; }
+.contact-layout { display: grid; grid-template-columns: 1fr 1.6fr; gap: 80px; align-items: start; }
+
+.contact-info h2 { font-family:'Montserrat',sans-serif; font-size:22px; font-weight:700; color:var(--navy); margin-bottom:32px; }
+.info-item { display:flex; gap:16px; margin-bottom:28px; padding-bottom:28px; border-bottom:1px solid var(--border); }
+.info-item:last-of-type { border-bottom:none; }
+.info-icon { width:44px; height:44px; background:var(--offwhite); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.info-icon .material-symbols-outlined { font-size:22px; color:var(--navy); }
+.info-label { font-family:'IBM Plex Sans',sans-serif; font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--gray); margin-bottom:4px; }
+.info-value { font-size:16px; color:var(--dgray); font-weight:400; }
+.info-value a { color:var(--red); text-decoration:none; font-weight:600; }
+.info-value a:hover { text-decoration:underline; }
+
+.hours-grid { display:grid; grid-template-columns:1fr 1fr; gap:4px 16px; margin-top:4px; font-size:14px; color:var(--gray); }
+
+.emergency-card { background:var(--red); padding:24px; margin-top:32px; display:flex; gap:16px; align-items:flex-start; }
+.emergency-card .material-symbols-outlined { font-size:24px; color:#fff; flex-shrink:0; margin-top:2px; }
+.emergency-card h3 { font-family:'Montserrat',sans-serif; font-size:16px; font-weight:700; color:#fff; margin-bottom:4px; }
+.emergency-card p { color:rgba(255,255,255,0.8); font-size:14px; line-height:1.5; }
+.emergency-card a { color:#fff; font-weight:700; font-size:18px; text-decoration:none; display:block; margin-top:8px; }
+
+/* Form */
+.contact-form-wrap { background:#fff; border:1px solid var(--border); padding:48px; }
+.contact-form-wrap h2 { font-family:'Montserrat',sans-serif; font-size:22px; font-weight:700; color:var(--navy); margin-bottom:8px; }
+.contact-form-wrap p { color:var(--gray); font-size:14px; margin-bottom:32px; }
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.form-group { display:flex; flex-direction:column; gap:6px; margin-bottom:20px; }
+.form-success {
+  display:none; background:rgba(46,125,50,0.08); border:1px solid var(--green);
+  padding:20px 24px; color:var(--green);
+  font-family:'IBM Plex Sans',sans-serif; font-size:14px; font-weight:600;
+  align-items:center; gap:10px; margin-top:20px;
+}
+.form-success .material-symbols-outlined { font-size:22px; }
+
+@media (max-width:900px) { .contact-layout { grid-template-columns:1fr; } }
+@media (max-width:560px) { .form-row { grid-template-columns:1fr; } .contact-form-wrap { padding:28px 20px; } }
+</style>
+</head>
+<body>
+
+<div class="util-bar">
+  <div class="util-bar-inner">
+    <div class="util-bar-left"><strong>Conway, AR</strong> &nbsp;|&nbsp; Veteran Owned &amp; Operated &nbsp;|&nbsp; Licensed &amp; Insured</div>
+    <div class="util-bar-right">
+      <a href="signin.html">My Account</a>
+      <a href="tel:5014286690" class="util-bar-phone"><span class="material-symbols-outlined" style="font-size:14px;vertical-align:middle;">call</span> 501-428-6690</a>
+    </div>
+  </div>
+</div>
+<header id="topnav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">
+      <div class="nav-logo-text">AIR FORCE<span>DUCT CLEANING &amp; TESTING</span></div>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="faq.html">FAQ</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn-nav-call" href="tel:5014286690"><span class="material-symbols-outlined">call</span> 501-428-6690</a>
+      <a class="btn-nav-signin" href="signin.html">Sign In</a>
+      <button class="nav-hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<nav class="mobile-menu" id="mobile-menu" style="display:none;">
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="faq.html">FAQ</a>
+  <a href="reviews.html">Reviews</a>
+  <a href="contact.html" class="active">Contact</a>
+  <a href="signin.html">Sign In</a>
+  <a href="tel:5014286690" class="btn-mobile-call">📞 Call 501-428-6690 — Free Estimates</a>
+</nav>
+
+    <div class="nav-right">
+      <a class="nav-phone" href="tel:5014286690"><span class="material-symbols-outlined">call</span> 501-428-6690</a>
+      <a class="btn-nav" href="signin.html">Sign In</a>
+      <button class="nav-hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<nav class="mobile-menu" id="mobile-menu" style="display:none;">
+  <a href="services.html">Services</a>
+  <a href="index.html#about">About Us</a>
+  <a href="faq.html">FAQ</a>
+  <a href="reviews.html">Reviews</a>
+  <a href="contact.html" class="active">Contact</a>
+  <a href="signin.html">Sign In</a>
+  <a href="tel:5014286690" class="btn-mobile">📞 Call 501-428-6690</a>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-eyebrow">Get In Touch</div>
+    <h1 class="headline-xl">Contact Us</h1>
+    <p>Ready to deploy our certified technicians? Call us directly or send a message — our dispatch team responds within 2 hours.</p>
+  </div>
+</section>
+
+<section class="contact-section">
+  <div class="container">
+    <div class="contact-layout">
+
+      <div class="contact-info reveal">
+        <h2>Mission Command</h2>
+
+        <div class="info-item">
+          <div class="info-icon"><span class="material-symbols-outlined">location_on</span></div>
+          <div>
+            <div class="info-label">Headquarters</div>
+            <div class="info-value">1155 Parkway Street<br/>Conway, Arkansas 72034</div>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon"><span class="material-symbols-outlined">call</span></div>
+          <div>
+            <div class="info-label">Direct Line</div>
+            <div class="info-value"><a href="tel:5014286690">501-428-6690</a></div>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon"><span class="material-symbols-outlined">mail</span></div>
+          <div>
+            <div class="info-label">Email</div>
+            <div class="info-value"><a href="mailto:service@airforceduct.com">service@airforceduct.com</a></div>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon"><span class="material-symbols-outlined">schedule</span></div>
+          <div>
+            <div class="info-label">Operational Hours</div>
+            <div class="info-value">
+              <div class="hours-grid">
+                <span>Mon – Sat</span><span>8:00 AM – 6:00 PM</span>
+                <span>Sunday</span><span>Closed</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="emergency-card">
+          <span class="material-symbols-outlined">emergency</span>
+          <div>
+            <h3>24/7 Emergency Line</h3>
+            <p>Mold discovery, water damage, post-fire odors? We respond around the clock.</p>
+            <a href="tel:5014286690">501-428-6690</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-wrap reveal">
+        <h2>Mission Request Form</h2>
+        <p>Submit your service request below. Our dispatch team will confirm within 2 hours during operational hours.</p>
+
+        <form id="contact-form" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="name">Full Name *</label>
+              <div class="input-icon-wrap">
+                <span class="material-symbols-outlined">person</span>
+                <input class="form-input with-icon" id="name" name="name" type="text" placeholder="John Smith" required/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="email">Email Address *</label>
+              <div class="input-icon-wrap">
+                <span class="material-symbols-outlined">mail</span>
+                <input class="form-input with-icon" id="email" name="email" type="email" placeholder="john@example.com" required/>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="phone">Phone Number</label>
+              <div class="input-icon-wrap">
+                <span class="material-symbols-outlined">call</span>
+                <input class="form-input with-icon" id="phone" name="phone" type="tel" placeholder="(501) 555-0123"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="service">Requested Service *</label>
+              <select class="form-input" id="service" name="service" required>
+                <option value="">Select a service...</option>
+                <option>Residential Duct Cleaning</option>
+                <option>Dryer Vent Cleaning</option>
+                <option>Air Quality Testing</option>
+                <option>HVAC Maintenance</option>
+                <option>Mold Remediation</option>
+                <option>Commercial Quote</option>
+                <option>Emergency Service</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="message">Mission Details / Comments</label>
+            <textarea class="form-input" id="message" name="message" placeholder="Describe your situation — property type, any symptoms you've noticed, urgency, etc."></textarea>
+          </div>
+
+          <button class="btn-red" type="submit" style="width:100%; justify-content:center; margin-top:8px;">
+            Send Request <span class="material-symbols-outlined">send</span>
+          </button>
+
+          <div class="form-success" id="form-success">
+            <span class="material-symbols-outlined">check_circle</span>
+            Message sent! Our team will respond within 2 hours during operational hours.
+          </div>
+
+          <p style="margin-top:16px; font-size:13px; color:var(--gray); text-align:center;">
+            For immediate assistance call <a href="tel:5014286690" style="color:var(--red); font-weight:600;">501-428-6690</a>
+          </p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo-text">AIR FORCE<span> DUCT CLEANING &amp; TESTING</span></div>
+      <p>Military-grade air duct cleaning, dryer vent service, and HVAC testing in Conway and Central Arkansas. Veteran owned and operated.</p>
+      <p style="margin-top:14px; color:rgba(255,255,255,0.35); font-size:13px;">© 2024 Air Force Duct Cleaning &amp; Testing. All Rights Reserved.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="faq.html">FAQ</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="tel:5014286690">📞 501-428-6690</a>
+      <a href="mailto:cleanduct@feeltheairforce.com">cleanduct@feeltheairforce.com</a>
+      <a href="#">Conway, AR 72034</a>
+      <a href="#">Mon–Sat 8AM–6PM</a>
+      <a href="#">24/7 Emergency Line</a>
+    </div>
+    <div class="footer-col">
+      <h4>Account</h4>
+      <a href="signin.html">Sign In</a>
+      <a href="register.html">Create Account</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2024 Air Force Duct Cleaning &amp; Testing — Conway, Arkansas</span>
+    <span>Veteran Owned &amp; Operated</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const service = document.getElementById('service').value;
+  if (!name || !email || !service) {
+    alert('Please fill in all required fields.');
+    return;
+  }
+  const success = document.getElementById('form-success');
+  success.style.display = 'flex';
+  this.querySelector('button[type=submit]').disabled = true;
+  this.querySelector('button[type=submit]').textContent = 'Request Sent';
+  window.scrollTo({ top: success.offsetTop - 80, behavior: 'smooth' });
+});
+</script>
+</body>
+</html>
