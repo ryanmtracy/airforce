@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Air Force Duct Cleaning & Testing | Conway, AR</title>
+<meta name="description" content="Military-grade air duct cleaning, dryer vent cleaning, and HVAC testing in Conway, Arkansas. Veteran-owned. 24/7 emergency service."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=IBM+Plex+Sans:wght@500;600&family=Work+Sans:wght@400&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@400,0&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/style.css"/>
+<style>
+/* ——— Hero ——— */
+.hero {
+  min-height: 100vh; position: relative; display: flex; align-items: center;
+  padding-top: 72px; overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background: url('images/5.webp') center/cover no-repeat;
+}
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(105deg, rgba(3,21,65,0.92) 0%, rgba(3,21,65,0.75) 55%, rgba(3,21,65,0.45) 100%);
+}
+.hero-content {
+  position: relative; z-index: 2; max-width: 1280px; margin: 0 auto; padding: 80px 24px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+}
+.hero-left { max-width: 580px; }
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+  color: rgba(255,255,255,0.6); margin-bottom: 24px;
+}
+.hero-eyebrow::before { content: ''; display: block; width: 24px; height: 2px; background: var(--secondary); }
+.hero h1 { color: #fff; margin-bottom: 24px; }
+.hero h1 .accent { color: var(--secondary); }
+.hero-sub { color: rgba(255,255,255,0.75); font-size: 18px; line-height: 1.65; margin-bottom: 40px; max-width: 480px; }
+.hero-actions { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 48px; }
+.hero-trust { display: flex; gap: 28px; flex-wrap: wrap; }
+.trust-item { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.65); font-family: 'IBM Plex Sans', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.04em; }
+.trust-item .material-symbols-outlined { font-size: 18px; color: var(--verified-gold); }
+.hero-right { display: flex; justify-content: flex-end; }
+.hero-card {
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+  backdrop-filter: blur(12px); padding: 36px; max-width: 340px; width: 100%;
+}
+.hero-card h3 {
+  font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 700;
+  color: #fff; margin-bottom: 24px; text-transform: uppercase; letter-spacing: 0.05em;
+}
+.hero-stat { display: flex; align-items: flex-end; gap: 10px; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.hero-stat:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.hero-stat-num { font-family: 'Montserrat', sans-serif; font-size: 36px; font-weight: 800; color: #fff; line-height: 1; }
+.hero-stat-label { font-family: 'IBM Plex Sans', sans-serif; font-size: 12px; font-weight: 500; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px; }
+.hero-stat-accent { color: var(--secondary); }
+
+@media (max-width: 900px) {
+  .hero-content { grid-template-columns: 1fr; }
+  .hero-right { display: none; }
+}
+@media (max-width: 640px) {
+  .hero-content { padding: 60px 16px; }
+  .hero-actions { flex-direction: column; }
+  .hero-actions .btn-primary, .hero-actions .btn-outline { width: 100%; justify-content: center; }
+}
+
+/* ——— Trust Bar ——— */
+.trust-bar {
+  background: var(--primary-container); padding: 28px 24px;
+  border-bottom: 3px solid var(--secondary);
+}
+.trust-bar-inner {
+  max-width: 1280px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap; gap: 24px;
+}
+.trust-bar-item {
+  display: flex; align-items: center; gap: 12px; color: rgba(255,255,255,0.85);
+}
+.trust-bar-item .material-symbols-outlined { font-size: 28px; color: var(--verified-gold); }
+.trust-bar-item strong { display: block; font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 700; color: #fff; }
+.trust-bar-item span { font-size: 12px; color: rgba(255,255,255,0.55); font-family: 'IBM Plex Sans', sans-serif; }
+
+/* ——— Section base ——— */
+section { padding: 96px 0; }
+.section-eyebrow {
+  font-family: 'IBM Plex Sans', sans-serif; font-size: 11px; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--secondary);
+  display: flex; align-items: center; gap: 10px; margin-bottom: 16px;
+}
+.section-eyebrow::after { content: ''; flex: 0 0 32px; height: 2px; background: var(--secondary); }
+
+/* ——— Services Preview ——— */
+.services-section { background: var(--background); }
+.services-header { max-width: 540px; margin-bottom: 56px; }
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+.service-card {
+  background: #fff; padding: 40px 32px;
+  border: 1px solid var(--outline-variant);
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+  display: flex; flex-direction: column;
+}
+.service-card:hover { border-color: var(--secondary); box-shadow: 0 8px 32px rgba(3,21,65,0.1); transform: translateY(-4px); }
+.service-icon {
+  width: 52px; height: 52px; background: var(--surface-low);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 24px;
+}
+.service-icon .material-symbols-outlined { font-size: 28px; color: var(--primary); }
+.service-card h3 { font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 12px; }
+.service-card p { color: var(--on-surface-variant); font-size: 14px; line-height: 1.65; flex: 1; margin-bottom: 28px; }
+.service-link {
+  font-family: 'IBM Plex Sans', sans-serif; font-size: 12px; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--secondary);
+  text-decoration: none; display: flex; align-items: center; gap: 6px;
+  transition: gap 0.2s;
+}
+.service-link:hover { gap: 10px; }
+@media (max-width: 900px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .services-grid { grid-template-columns: 1fr; } }
+
+/* ——— Process ——— */
+.process-section { background: var(--primary); color: #fff; }
+.process-section .section-eyebrow { color: rgba(255,255,255,0.5); }
+.process-section .section-eyebrow::after { background: rgba(255,255,255,0.3); }
+.process-section h2 { color: #fff; margin-bottom: 56px; }
+.process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; }
+.process-step { padding: 40px 28px; border-right: 1px solid rgba(255,255,255,0.08); position: relative; }
+.process-step:last-child { border-right: none; }
+.step-num {
+  font-family: 'Montserrat', sans-serif; font-size: 64px; font-weight: 800;
+  color: rgba(255,255,255,0.06); line-height: 1; margin-bottom: -16px;
+}
+.step-icon { width: 44px; height: 44px; background: var(--secondary); display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+.step-icon .material-symbols-outlined { font-size: 22px; color: #fff; }
+.process-step h3 { font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 10px; }
+.process-step p { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.6; }
+@media (max-width: 900px) { .process-steps { grid-template-columns: 1fr 1fr; } .process-step { border-bottom: 1px solid rgba(255,255,255,0.08); } }
+@media (max-width: 560px) { .process-steps { grid-template-columns: 1fr; } }
+
+/* ——— Social proof bar ——— */
+.proof-bar { background: var(--surface-low); padding: 56px 0; border-top: 1px solid var(--outline-variant); border-bottom: 1px solid var(--outline-variant); }
+.proof-inner { max-width: 1280px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: 1fr 2px 1fr 2px 1fr; gap: 0; align-items: center; }
+.proof-divider { background: var(--outline-variant); height: 60px; }
+.proof-stat { text-align: center; padding: 0 40px; }
+.proof-num { font-family: 'Montserrat', sans-serif; font-size: 48px; font-weight: 800; color: var(--primary); line-height: 1; }
+.proof-num sup { font-size: 24px; vertical-align: super; }
+.proof-label { font-family: 'IBM Plex Sans', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--on-surface-variant); margin-top: 8px; }
+@media (max-width: 640px) { .proof-inner { grid-template-columns: 1fr; } .proof-divider { display: none; } .proof-stat { padding: 24px 0; border-bottom: 1px solid var(--outline-variant); } .proof-stat:last-child { border-bottom: none; } }
+
+/* ——— Reviews snippet ——— */
+.reviews-section { background: #fff; }
+.reviews-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 48px; flex-wrap: wrap; gap: 24px; }
+.star-row { display: flex; gap: 3px; margin-bottom: 8px; }
+.star-row .material-symbols-outlined { font-size: 20px; color: var(--verified-gold); font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+.reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.review-card { background: var(--surface-low); padding: 32px; border: 1px solid var(--outline-variant); }
+.review-card blockquote { font-size: 15px; line-height: 1.7; color: var(--on-surface); margin: 16px 0 20px; font-style: italic; }
+.review-author { font-family: 'IBM Plex Sans', sans-serif; font-size: 13px; font-weight: 600; color: var(--primary); }
+.review-type { font-family: 'IBM Plex Sans', sans-serif; font-size: 11px; color: var(--on-surface-variant); margin-top: 2px; }
+@media (max-width: 900px) { .reviews-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .reviews-grid { grid-template-columns: 1fr; } }
+
+/* ——— About ——— */
+.about-section { background: var(--surface-low); }
+.about-inner { max-width: 1280px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.about-img { position: relative; }
+.about-img img { width: 100%; height: 500px; object-fit: cover; display: block; }
+.about-badge {
+  position: absolute; bottom: -20px; right: -20px;
+  background: var(--secondary); color: #fff; padding: 24px 28px; text-align: center;
+  box-shadow: 0 8px 32px var(--red-shadow);
+}
+.about-badge-num { font-family: 'Montserrat', sans-serif; font-size: 36px; font-weight: 800; line-height: 1; }
+.about-badge-text { font-family: 'IBM Plex Sans', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.85; margin-top: 4px; }
+.about-text .section-eyebrow { margin-bottom: 16px; }
+.about-text h2 { color: var(--primary); margin-bottom: 20px; }
+.about-text p { color: var(--on-surface-variant); font-size: 16px; line-height: 1.75; margin-bottom: 16px; }
+.about-checklist { margin: 28px 0; display: flex; flex-direction: column; gap: 12px; }
+.about-check { display: flex; align-items: center; gap: 10px; font-size: 15px; color: var(--on-surface); }
+.about-check .material-symbols-outlined { font-size: 20px; color: var(--success-green); flex-shrink: 0; font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+@media (max-width: 900px) { .about-inner { grid-template-columns: 1fr; gap: 40px; } .about-img { display: none; } }
+
+/* ——— CTA ——— */
+.cta-section { background: var(--secondary); color: #fff; padding: 80px 0; text-align: center; }
+.cta-section h2 { font-family: 'Montserrat', sans-serif; font-size: clamp(28px, 4vw, 44px); font-weight: 800; color: #fff; margin-bottom: 16px; }
+.cta-section p { font-size: 18px; color: rgba(255,255,255,0.8); margin-bottom: 40px; }
+.cta-phone {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: #fff; color: var(--secondary);
+  font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 800;
+  padding: 18px 36px; text-decoration: none;
+  transition: transform 0.15s, box-shadow 0.15s;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.2);
+}
+.cta-phone:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(0,0,0,0.3); }
+.cta-sub { margin-top: 20px; font-size: 13px; color: rgba(255,255,255,0.6); font-family: 'IBM Plex Sans', sans-serif; letter-spacing: 0.05em; }
+</style>
+</head>
+<body>
+
+<!-- Emergency Banner -->
+<div class="emergency-banner">
+  ⚡ 24/7 Emergency Service Available &mdash; <a href="tel:5014286690">Call Now: 501-428-6690</a>
+</div>
+
+<!-- Nav -->
+<header id="topnav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html">AIR FORCE<br/><span>DUCT CLEANING & TESTING</span></a>
+    <nav class="nav-links">
+      <a href="services.html">Services</a>
+      <a href="index.html#about">About Us</a>
+      <a href="faq.html">FAQ</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-right">
+      <a class="nav-phone" href="tel:5014286690">
+        <span class="material-symbols-outlined">call</span> 501-428-6690
+      </a>
+      <a class="btn-nav" href="signin.html">Sign In</a>
+      <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<nav class="mobile-menu" id="mobile-menu" style="display:none;">
+  <a href="services.html">Services</a>
+  <a href="index.html#about">About Us</a>
+  <a href="faq.html">FAQ</a>
+  <a href="reviews.html">Reviews</a>
+  <a href="contact.html">Contact</a>
+  <a href="signin.html">Sign In</a>
+  <a href="tel:5014286690" class="btn-mobile">📞 Call 501-428-6690</a>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-eyebrow">Veteran-Owned &amp; Operated</div>
+      <h1 class="headline-xl">Military-Grade<br/>Air Duct <span class="accent">Precision.</span></h1>
+      <p class="hero-sub">Professional duct cleaning, dryer vent service, and HVAC testing for Conway and Central Arkansas. We treat every home like a mission.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="tel:5014286690">
+          <span class="material-symbols-outlined">call</span> Call 501-428-6690
+        </a>
+        <a class="btn-outline" href="services.html">Our Services</a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-item"><span class="material-symbols-outlined">verified</span> Licensed &amp; Insured</div>
+        <div class="trust-item"><span class="material-symbols-outlined">military_tech</span> Veteran Owned</div>
+        <div class="trust-item"><span class="material-symbols-outlined">star</span> 4.9 Star Rating</div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-card">
+        <h3>Mission Stats</h3>
+        <div class="hero-stat">
+          <div>
+            <div class="hero-stat-num">500<span class="hero-stat-accent">+</span></div>
+            <div class="hero-stat-label">Homes Serviced</div>
+          </div>
+        </div>
+        <div class="hero-stat">
+          <div>
+            <div class="hero-stat-num">4.9<span class="hero-stat-accent">★</span></div>
+            <div class="hero-stat-label">Average Rating</div>
+          </div>
+        </div>
+        <div class="hero-stat">
+          <div>
+            <div class="hero-stat-num">24<span class="hero-stat-accent">/7</span></div>
+            <div class="hero-stat-label">Emergency Service</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Trust Bar -->
+<div class="trust-bar">
+  <div class="trust-bar-inner">
+    <div class="trust-bar-item">
+      <span class="material-symbols-outlined">military_tech</span>
+      <div><strong>Veteran Owned</strong><span>Conway, Arkansas</span></div>
+    </div>
+    <div class="trust-bar-item">
+      <span class="material-symbols-outlined">verified</span>
+      <div><strong>Certified Technicians</strong><span>NADCA Standards</span></div>
+    </div>
+    <div class="trust-bar-item">
+      <span class="material-symbols-outlined">schedule</span>
+      <div><strong>24/7 Emergency</strong><span>Same-Day Available</span></div>
+    </div>
+    <div class="trust-bar-item">
+      <span class="material-symbols-outlined">shield</span>
+      <div><strong>Fully Insured</strong><span>Licensed &amp; Bonded</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- Services Preview -->
+<section class="services-section">
+  <div class="container">
+    <div class="services-header">
+      <div class="section-eyebrow">What We Do</div>
+      <h2 class="headline-lg" style="color:var(--primary); margin-bottom: 16px;">Precision Cleaning.<br/>Proven Results.</h2>
+      <p class="body-md" style="color:var(--on-surface-variant);">From duct cleaning to mold remediation, every service is delivered with military discipline and guaranteed quality.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon"><span class="material-symbols-outlined">air</span></div>
+        <h3>Air Quality Testing</h3>
+        <p>Comprehensive indoor air quality testing to identify pollutants, allergens, and airborne contaminants keeping your family safe.</p>
+        <a class="service-link" href="services.html">Learn More <span class="material-symbols-outlined" style="font-size:16px;">arrow_forward</span></a>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><span class="material-symbols-outlined">heat</span></div>
+        <h3>Dryer Vent Cleaning</h3>
+        <p>Critical lint removal to prevent fire hazards and restore your dryer's efficiency. One of the most overlooked home safety services.</p>
+        <a class="service-link" href="services.html">Learn More <span class="material-symbols-outlined" style="font-size:16px;">arrow_forward</span></a>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><span class="material-symbols-outlined">filter_alt</span></div>
+        <h3>Duct Cleaning</h3>
+        <p>HEPA-vacuum deep cleaning removes years of dust, debris, and allergens from your entire ductwork system. Breathe the difference.</p>
+        <a class="service-link" href="services.html">Learn More <span class="material-symbols-outlined" style="font-size:16px;">arrow_forward</span></a>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><span class="material-symbols-outlined">thermostat</span></div>
+        <h3>HVAC Maintenance</h3>
+        <p>Full system inspections and airflow testing to keep your heating and cooling running efficiently year-round.</p>
+        <a class="service-link" href="services.html">Learn More <span class="material-symbols-outlined" style="font-size:16px;">arrow_forward</span></a>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><span class="material-symbols-outlined">sanitizer</span></div>
+        <h3>Mold Remediation</h3>
+        <p>Expert removal with EPA-approved treatments of microbial growth. We ensure safe, mold-free environments for your family.</p>
+        <a class="service-link" href="services.html">Learn More <span class="material-symbols-outlined" style="font-size:16px;">arrow_forward</span></a>
+      </div>
+      <div class="service-card reveal" style="background:var(--primary); border-color:var(--primary); justify-content: center; align-items: flex-start;">
+        <div style="margin-bottom: 20px;">
+          <div class="label-sm" style="color:rgba(255,255,255,0.5); margin-bottom: 12px;">Not sure what you need?</div>
+          <h3 style="color:#fff; font-family:'Montserrat',sans-serif; font-size:20px; font-weight:700;">Call us — we'll diagnose it free.</h3>
+        </div>
+        <a class="btn-primary" href="tel:5014286690" style="margin-top: auto;">
+          <span class="material-symbols-outlined">call</span> 501-428-6690
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Process -->
+<section class="process-section">
+  <div class="container">
+    <div class="section-eyebrow">How It Works</div>
+    <h2 class="headline-lg">Four Steps to Cleaner Air</h2>
+    <div class="process-steps">
+      <div class="process-step reveal">
+        <div class="step-num">01</div>
+        <div class="step-icon"><span class="material-symbols-outlined">call</span></div>
+        <h3>Schedule</h3>
+        <p>Call or request service. We'll confirm your appointment and send a certified technician.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-num">02</div>
+        <div class="step-icon"><span class="material-symbols-outlined">search</span></div>
+        <h3>Inspect</h3>
+        <p>We conduct a detailed inspection of your entire ductwork system to identify problem areas.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-num">03</div>
+        <div class="step-icon"><span class="material-symbols-outlined">cleaning</span></div>
+        <h3>Clean</h3>
+        <p>HEPA-vacuum cleaning removes all contaminants. Typically 2–4 hours for a full residence.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-num">04</div>
+        <div class="step-icon"><span class="material-symbols-outlined">task_alt</span></div>
+        <h3>Verify</h3>
+        <p>We provide before/after documentation so you can see exactly what was removed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats -->
+<div class="proof-bar">
+  <div class="proof-inner">
+    <div class="proof-stat reveal">
+      <div class="proof-num">500<sup>+</sup></div>
+      <div class="proof-label">Homes Serviced</div>
+    </div>
+    <div class="proof-divider"></div>
+    <div class="proof-stat reveal">
+      <div class="proof-num">4.9★</div>
+      <div class="proof-label">Average Rating</div>
+    </div>
+    <div class="proof-divider"></div>
+    <div class="proof-stat reveal">
+      <div class="proof-num">24/7</div>
+      <div class="proof-label">Emergency Available</div>
+    </div>
+  </div>
+</div>
+
+<!-- Reviews Snippet -->
+<section class="reviews-section">
+  <div class="container">
+    <div class="reviews-header">
+      <div>
+        <div class="section-eyebrow">Client Reviews</div>
+        <h2 class="headline-lg" style="color:var(--primary);">What Our Clients Say</h2>
+      </div>
+      <div style="text-align:right;">
+        <div class="star-row">
+          <span class="material-symbols-outlined">star</span>
+          <span class="material-symbols-outlined">star</span>
+          <span class="material-symbols-outlined">star</span>
+          <span class="material-symbols-outlined">star</span>
+          <span class="material-symbols-outlined">star</span>
+        </div>
+        <div class="label-bold" style="color:var(--primary);">4.9 / 5.0</div>
+        <div class="label-sm" style="color:var(--on-surface-variant); margin-top:4px;">Based on 500+ Reviews</div>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <div class="star-row">
+          <span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span>
+        </div>
+        <blockquote>"Punctual, professional, spotless. Harrison and the team did an incredible job cleaning our entire system. The air feels cleaner immediately."</blockquote>
+        <div class="review-author">Katy Lumpkin</div>
+        <div class="review-type">Residential Service</div>
+      </div>
+      <div class="review-card reveal">
+        <div class="star-row">
+          <span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span>
+        </div>
+        <blockquote>"Same-day consultation! They identified and solved a funky smell we'd had for weeks. Incredible service speed and professionalism."</blockquote>
+        <div class="review-author">Haley Carpenter</div>
+        <div class="review-type">Emergency Response</div>
+      </div>
+      <div class="review-card reveal">
+        <div class="star-row">
+          <span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span>
+        </div>
+        <blockquote>"Mold remediation done right. The team was incredibly thorough and explained every step. The difference is literally night and day."</blockquote>
+        <div class="review-author">Lori Foreman</div>
+        <div class="review-type">Mold Remediation</div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:40px;">
+      <a href="reviews.html" class="btn-primary">Read All Reviews <span class="material-symbols-outlined">arrow_forward</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section class="about-section" id="about">
+  <div class="about-inner">
+    <div class="about-img">
+      <img src="images/18.webp" alt="HVAC technician at work"/>
+      <div class="about-badge">
+        <div class="about-badge-num">10+</div>
+        <div class="about-badge-text">Years of Service</div>
+      </div>
+    </div>
+    <div class="about-text reveal">
+      <div class="section-eyebrow">About Us</div>
+      <h2 class="headline-lg">Conway-Based. Veteran-Led.</h2>
+      <p>Air Force Duct Cleaning & Testing is a veteran-owned small business headquartered in Conway, Arkansas. We bring the same discipline and attention to detail from military service into every home we work in.</p>
+      <p>Our certified technicians use industrial-grade equipment and follow NADCA standards — because your family's air quality deserves more than a basic vacuuming.</p>
+      <div class="about-checklist">
+        <div class="about-check"><span class="material-symbols-outlined">check_circle</span> NADCA-certified cleaning process</div>
+        <div class="about-check"><span class="material-symbols-outlined">check_circle</span> Before &amp; after documentation provided</div>
+        <div class="about-check"><span class="material-symbols-outlined">check_circle</span> Fully licensed, bonded &amp; insured</div>
+        <div class="about-check"><span class="material-symbols-outlined">check_circle</span> Same-day &amp; emergency appointments available</div>
+      </div>
+      <a class="btn-primary" href="contact.html" style="display:inline-flex; margin-top:8px;">Get a Free Quote <span class="material-symbols-outlined">arrow_forward</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section style="padding:80px 0; background:#fff;">
+  <div class="container">
+    <div style="margin-bottom:48px;">
+      <div class="section-eyebrow">Real Work. Real Results.</div>
+      <h2 class="headline-lg" style="color:var(--primary);">See Us In Action</h2>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(4,1fr); grid-template-rows:auto auto; gap:4px;">
+      <div style="grid-column:span 2; grid-row:span 2; overflow:hidden; height:420px;">
+        <img src="images/9.webp" alt="Air Force Duct van at residential job" style="width:100%;height:100%;object-fit:cover;transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'"/>
+      </div>
+      <div style="overflow:hidden; height:208px;">
+        <img src="images/16.webp" alt="Technician servicing wall vent" style="width:100%;height:100%;object-fit:cover;transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'"/>
+      </div>
+      <div style="overflow:hidden; height:208px;">
+        <img src="images/8.webp" alt="Heavily soiled air filter" style="width:100%;height:100%;object-fit:cover;transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'"/>
+      </div>
+      <div style="overflow:hidden; height:208px;">
+        <img src="images/12.webp" alt="Inside view of dirty duct" style="width:100%;height:100%;object-fit:cover;transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'"/>
+      </div>
+      <div style="overflow:hidden; height:208px;">
+        <img src="images/4.webp" alt="Air Force van at Tucker Creek" style="width:100%;height:100%;object-fit:cover;transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'"/>
+      </div>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:4px; margin-top:4px;">
+      <div style="overflow:hidden; height:200px;">
+        <img src="images/6.webp" alt="Debris removed from duct system" style="width:100%;height:100%;object-fit:cover;transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'"/>
+      </div>
+      <div style="overflow:hidden; height:200px;">
+        <img src="images/13.webp" alt="Blocked dryer vent before cleaning" style="width:100%;height:100%;object-fit:cover;transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'"/>
+      </div>
+      <div style="overflow:hidden; height:200px;">
+        <img src="images/2.webp" alt="Air Force team at trade show" style="width:100%;height:100%;object-fit:cover;transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'"/>
+      </div>
+      <div style="overflow:hidden; height:200px;">
+        <img src="images/15.webp" alt="Dirty air filter closeup" style="width:100%;height:100%;object-fit:cover;transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <h2>Ready for a Clean Start?</h2>
+    <p>Call us today. Our dispatch team responds within 2 hours.</p>
+    <a class="cta-phone" href="tel:5014286690">
+      <span class="material-symbols-outlined" style="font-size:28px;">call</span> 501-428-6690
+    </a>
+    <p class="cta-sub">Monday – Saturday 8AM–6PM &nbsp;|&nbsp; 24/7 Emergency Line</p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h3>AIR FORCE DUCT CLEANING & TESTING</h3>
+      <p>Military-grade HVAC cleaning and testing services for residential and commercial properties throughout Central Arkansas.</p>
+      <p style="margin-top:16px; color:rgba(255,255,255,0.4);">© 2024 Air Force Duct Cleaning & Testing.<br/>All Rights Reserved. Veteran Owned & Operated.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="index.html#about">About Us</a>
+      <a href="faq.html">FAQ</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="tel:5014286690">501-428-6690</a>
+      <a href="mailto:service@airforceduct.com">service@airforceduct.com</a>
+      <a href="contact.html">1155 Parkway Street<br/>Conway, AR 72034</a>
+    </div>
+    <div class="footer-col">
+      <h4>Account</h4>
+      <a href="signin.html">Sign In</a>
+      <a href="register.html">Create Account</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2024 Air Force Duct Cleaning & Testing. Excellence in all we do.</span>
+    <span>Conway, AR &mdash; Veteran Owned &amp; Operated</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
